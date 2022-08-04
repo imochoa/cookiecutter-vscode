@@ -74,4 +74,5 @@ Associates `.lxx` suffixed-files with `cpp`
 
 
 # Cookiecutter ToDo's
-- Use more params (like maybe {{cookiecutter.compiler}}, include list, library list, etc)
+- Use more params (like maybe {{cookiecutter.compiler}}, {{cookiecutter.includes}}, {{cookiecutter.libraries}}, etc)
+
