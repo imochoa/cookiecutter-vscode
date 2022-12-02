@@ -1,6 +1,7 @@
 # How-to
 
 ## Required VSCode extensions
+- [CppTools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - `.vscode/c_cpp_properties.json` can help save some conguration parameters (include paths, compiler, ...)
 
 ## [tasks.json](.vscode/tasks.json)
@@ -20,26 +21,26 @@ Just play around with the compilation command on the command line until you get 
 Here's an example:
 ```json
 {
-			"command": "/usr/bin/g++",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-I",
-				"${fileDirname}",
-				"-I",
-				"/usr/include/eigen3",
-         	    "-I",
-				"/path/to/some/include",       
-    			"-g",
-				"${file}",
-                "/path/to/file1.cpp",
-                "/path/to/file2.cpp",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
-				"-lHalf",
-				"-ltbb",
-                "-lyourlib",
-			]
-		}
+	"command": "/usr/bin/g++",
+	"args": [
+		"-fdiagnostics-color=always",
+		"-I",
+		"${fileDirname}",
+		"-I",
+		"/usr/include/eigen3",
+    "-I",
+		"/path/to/some/include",       
+		"-g",
+		"${file}",
+    "/path/to/file1.cpp",
+    "/path/to/file2.cpp",
+		"-o",
+		"${fileDirname}/${fileBasenameNoExtension}"
+		"-lHalf",
+		"-ltbb",
+    "-lyourlib"
+	]
+}
 ```
 
 #### Libraries
@@ -48,7 +49,7 @@ You can find the available libraries name by running `ldconfig -p`
 
 
 ## [launch.json](.vscode/launch.json)
-For running and debugging the code
+For [running/debugging in VSCode](https://code.visualstudio.com/docs/editor/debugging). There's also a [cpp-specific launch.json overview](https://code.visualstudio.com/docs/cpp/launch-json-reference).
 
 For compiled languages, it is important to set the launch config's `"preLaunchTask"` to match the `"label"` of the task you set up in the [tasks.json](.vscode/tasks.json). Pay attention to any dependencies between them
 > For example the fact that the build **task** will generate a name for the binary executable based on the current file's name using some rule: `"${fileDirname}/${fileBasenameNoExtension}"`
@@ -68,9 +69,13 @@ Here's an example:
 ```
 
 ## [settings.json](.vscode/settings.json)
-General configuration settings
+General configuration settings [More info here](https://code.visualstudio.com/docs/getstarted/settings#_settingsjson)
 
-Associates `.lxx` suffixed-files with `cpp`
+### [Settings editor](https://code.visualstudio.com/docs/getstarted/settings#_settings-editor)
+You can also open the Settings editor by:
+- File > Preferences > Settings
+- from the Command Palette (Ctrl+Shift+P) with "Preferences: Open Settings" 
+- use the keyboard shortcut (Ctrl+,).
 
 
 # Cookiecutter ToDo's
