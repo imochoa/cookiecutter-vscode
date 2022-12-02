@@ -1,0 +1,6 @@
+{
+    "directory_name": "VSCodeCppProgram",
+    "compiler": "/usr/bin/g++",
+    "includes": "tbb half",
+    "libraries": "abc def"
+}
